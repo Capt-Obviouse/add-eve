@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
 #My Additions
-gem 'devise'
 gem 'eve_online'
+gem 'devise'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
