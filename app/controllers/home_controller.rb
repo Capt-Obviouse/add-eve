@@ -7,4 +7,8 @@ class HomeController < ApplicationController
 
   def recruitment
   end
+
+  def console
+  	
+  end
 end
