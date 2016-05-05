@@ -135,7 +135,7 @@ ul.navigation-bar li a {
 	}
 ul.navigation-bar li a:hover {background-color: #111;}
 
-ul.nagivation-bar li.icon {display: none;}
+ul.nagivation-bar li.icon {display: none; }
 
 /*
 li-navigation-bar {
