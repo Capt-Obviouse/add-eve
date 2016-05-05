@@ -14,14 +14,41 @@
  *= require_self
  */
 
+/********************************************* GENERAL *********************************************/
 
+#container {
+	min-height: 100%;
+	position: relative;
+	margin: 0px;
+	padding: 0px;
+}
 
- /********************************** Responsive w3schools **********************************/
+html,
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-family: "Lucida Sans", sans-serif;
+	background-color: #555;
+	color: #CCC;
+}
+[class*="col-"] {
+	float: left;
+	padding: 15px;
+	border: 0px;
+}
+
+.row::after {
+	content: "";
+	clear: both;
+	display: block;
+}
 
  * {
  	box-sizing: border-box;
  }
 
+/********************************************* MOBILE SIZE *********************************************/
 @media only screen and (max-width: 600px) {
     /* For mobile phones: */
 
@@ -33,7 +60,15 @@
 		max-width: 100%;
 		height: auto;
 	}
-
+	ul.navigation-bar {
+		list-style-type: none;
+		margin: 0px;
+		padding: 0px;
+		width: 100%;
+		overflow: hidden;
+		background-color: #222;
+		float: right;
+	}
 	ul.navigation-bar li:not(:first-child) {display: none;}
 
 	ul.navigation-bar li.icon {
@@ -41,17 +76,35 @@
 		display: inline-block;
 	}
 	div.header-image {
-	margin: 0px;
-	padding: 10px;
-	background-color: #222;
-	width: 100%;
-	overflow: hidden;
-	position: absolute;
-	left: 0px;
-}
-	div.header-image.responsive{
-		display: none;
+		margin: 0px; 
+		padding: 0px;
+		left: 0;
+		width: 100%;
+		overflow: hidden;
+		position: relative;
 	}
+	img.header-image {
+		position: relative;
+	}
+	.header-image.responsive {
+		position: relative;
+	}
+	div.body {
+		height: 100%;
+		position: relative;
+	}
+	div.nav {
+		margin: 0px;
+		padding: 0px;
+		overflow: hidden;
+		background-color: red;
+		width: 100%;
+		left: 0px;
+		top: 0px;
+		position: relative;
+		z-index: 100;
+	}
+	/********************************************* RESPONSIVE *********************************************/
 
 	ul.navigation-bar.responsive {position: relative;}
 
@@ -70,10 +123,24 @@
 		display: block;
 		text-align: left;
 	}
+	div.nav.responsive {
+		margin: 0px;
+		padding: 0px;
+		overflow: hidden;
+		background-color: red;
+		width: 100%;
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		z-index: 100;
+	}
+
 }/* end mobile size */
 
+
+/********************************************* DESKTOP SIZE **********************************************/
 @media only screen and (min-width: 600px) {
-    /* For desktop: */
+
 	.col-1 {width: 8.33%;}
 	.col-2 {width: 16.66%;}
 	.col-3 {width: 25%;}
@@ -86,43 +153,57 @@
 	.col-10 {width: 83.33%;}
 	.col-11 {width: 91.66%;}
 	.col-12 {width: 100%;}
+
 	ul.navigation-bar li.icon {display: none;}
 
 	div.header-image {
 		margin: 0px; 
 		padding: 0px;
 		padding-top: 20px;
-		background-color: #222;
+		background-color: #555;
 		width: 100%;
 		padding-bottom: 20px;
 		overflow: hidden;
 		z-index: 1;
 		height: auto;
 	}
+	img.header-image {
+		width: 100%;
+		left: 0;
+		padding: 0;
+		margin: 0;
+	}
+	div.body {
+		margin: 0;
+		padding: 10px;
+		padding-top: 50px;
+		padding-bottom: 150px;
+		z-index: 1;
+		position: relative;
+	}
+	div.nav {
+		margin: 0px;
+		padding: 0px;
+		overflow: hidden;
+		background-color: #222;
+		width: 100%;
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		z-index: 100;
+	}
+	ul.navigation-bar {
+		list-style-type: none;
+		margin: 0px;
+		padding: 0px;
+		overflow: hidden;
+		background-color: #222;
+		float: right;
+	}
+
 } /* end desktop size */
 
-[class*="col-"] {
-	float: left;
-	padding: 15px;
-	border: 0px;
-}
-
-.row::after {
-	content: "";
-	clear: both;
-	display: block;
-}
-
  /********************************** Navigation **********************************/
-ul.navigation-bar {
-	list-style-type: none;
-	margin: 0px;
-	padding: 0px;
-	overflow: hidden;
-	background-color: #222;
-	float: right;
-	
-}
 
 ul.navigation-bar li {float: left;}
 
@@ -152,40 +233,3 @@ div.footer {
 	position: absolute;
 	display: block;
 }			
-
-#container {
-	min-height: 100%;
-	position: relative;
-	margin: 0px;
-	padding: 0px;
-}
-#nav {
-	margin: 0px;
-	padding: 0px;
-	overflow: hidden;
-	background-color: #222;
-	width: 100%;
-	left: 0px;
-	top: 0px;
-	position: absolute;
-}
-
-#body {
-	margin: 0;
-	padding: 10px;
-	padding-top: 50px;
-	padding-bottom: 150px;
-	z-index: 1;
-	position: relative;
-
-}
-
-html,
-body {
-	margin: 0;
-	padding: 0;
-	height: 100%;
-	font-family: "Lucida Sans", sans-serif;
-	background-color: #444;
-	color: #CCC;
-}
