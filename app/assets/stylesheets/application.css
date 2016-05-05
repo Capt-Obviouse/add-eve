@@ -22,6 +22,14 @@
 	margin: 0px;
 	padding: 0px;
 }
+div.body {
+	margin: 0;
+	padding: 10px;
+	padding-top: 50px;
+	padding-bottom: 150px;
+	z-index: 1;
+	position: relative;
+}
 
 html,
 body {
@@ -89,10 +97,7 @@ body {
 	.header-image.responsive {
 		position: relative;
 	}
-	div.body {
-		height: 100%;
-		position: relative;
-	}
+
 	div.nav {
 		margin: 0px;
 		padding: 0px;
@@ -173,14 +178,6 @@ body {
 		padding: 0;
 		margin: 0;
 	}
-	div.body {
-		margin: 0;
-		padding: 10px;
-		padding-top: 50px;
-		padding-bottom: 150px;
-		z-index: 1;
-		position: relative;
-	}
 	div.nav {
 		margin: 0px;
 		padding: 0px;
@@ -221,15 +218,9 @@ ul.navigation-bar li a:hover {background-color: #111;}
 /********************************** Footer **********************************/
 
 div.footer {
-	float: bottom;
-	background-color: #333;
-	color: white;
-	bottom: 0px;
-	left: 0px;
+	left: 0;
+	right: 0;
 	min-height: 150px;
-	width: 100%;
-	margin: 0px;
-	padding: 0px;
 	position: absolute;
-	display: block;
+	background-color: #333;
 }			
