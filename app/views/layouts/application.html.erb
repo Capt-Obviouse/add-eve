@@ -1,18 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Always Destructive Decisions (ADD)- EvE Alliance</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div>
-	<%= link_to 'Home', '/home' %> <br>
-	<%= link_to 'Recruitment', '/recruitment' %> <br>
-	<%= link_to 'About', '/about' %>
+<div class='row'>
+	<div class="col-12">
+		<ul class='navigation-bar'>
+			<li><%= link_to 'Home', root_path %> </li>
+			<li><%= link_to 'Recruitment', home_recruitment_path %> </li>
+			<li><%= link_to 'About', home_about_path %></li>
+			<li><%= link_to 'Status', eve_status_path %></li>
+			<li class="icon"><a href="javascript:void(0);" onclick="myFunction()">&#9776;</a></li>
+		</ul>
+	</div>
 </div>
-<%= yield %>
+<div class='row'>
 
+	<%= yield %>
+
+</div>
+<div class='row'>
+	<div class="col-6">
+		Test
+	</div>
+	<div class="col-6">
+		Test 2
+	</div>
+</div>
 </body>
 </html>

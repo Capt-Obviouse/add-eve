@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/home', to: 'home#index', as: 'Home'
   get '/about', to: 'home#about', as: 'About'
   get '/recruitment', to: 'home#recruitment', as: 'Recruitment'
+  get '/status', to: 'eve#status', as: 'Status'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
