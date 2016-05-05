@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'home/console'
+
   get 'eve/status'
   get 'home/index'
   get 'home/about'
@@ -8,6 +10,7 @@ Rails.application.routes.draw do
   get '/home', to: 'home#index', as: 'Home'
   get '/about', to: 'home#about', as: 'About'
   get '/recruitment', to: 'home#recruitment', as: 'Recruitment'
+  get '/console', to: 'home#console', as: 'Console'
   get '/status', to: 'eve#status', as: 'Status'
 
 
