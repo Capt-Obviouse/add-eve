@@ -11,7 +11,7 @@
 <div id="container">
 	<div class='row'>
 		<div class="col-12">
-			<div id="nav">
+			<div class="nav">
 				<ul class='navigation-bar'>
 					<li><%= link_to 'Home', root_path %> </li>
 					<li><%= link_to 'Recruitment', home_recruitment_path %> </li>
@@ -23,27 +23,21 @@
 			</div>
 		</div>
 	</div>
-	<div class='row'>
-		<div class='col-12'>
-			<div class='header-image'>
-				<img src='assets/banner.gif' width='100%'>
-			</div>
-		</div>	
-	</div>
-	<div id="body">
-		<div class='row'>
+
+	<div class="body">
+
 
 			<%= yield %>
 
-		</div>
+
 	</div>
 	<div class="footer">
 		<div class='row'>
 			<div class="col-6">
-				Test
+				Footer Area 1
 			</div>
 			<div class="col-6">
-				Test 2
+				Footer area 2
 			</div>
 		</div>
 	</div>
