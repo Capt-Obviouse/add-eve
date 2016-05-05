@@ -8,29 +8,33 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class='row'>
-	<div class="col-12">
-		<ul class='navigation-bar'>
-			<li><%= link_to 'Home', root_path %> </li>
-			<li><%= link_to 'Recruitment', home_recruitment_path %> </li>
-			<li><%= link_to 'About', home_about_path %></li>
-			<li><%= link_to 'Status', eve_status_path %></li>
-			<li class="icon"><a href="javascript:void(0);" onclick="myFunction()">&#9776;</a></li>
-		</ul>
-	</div>
-</div>
-<div class='row'>
-
-	<%= yield %>
-
-</div>
-<div class="footer">
+<div id="container">
 	<div class='row'>
-		<div class="col-6">
-			Test
+		<div class="col-12">
+			<ul class='navigation-bar'>
+				<li><%= link_to 'Home', root_path %> </li>
+				<li><%= link_to 'Recruitment', home_recruitment_path %> </li>
+				<li><%= link_to 'About', home_about_path %></li>
+				<li><%= link_to 'Status', eve_status_path %></li>
+				<li class="icon"><a href="javascript:void(0);" onclick="myFunction()">&#9776;</a></li>
+			</ul>
 		</div>
-		<div class="col-6">
-			Test 2
+	</div>
+	<div id="body">
+		<div class='row'>
+
+			<%= yield %>
+
+		</div>
+	</div>
+	<div class="footer">
+		<div class='row'>
+			<div class="col-6">
+				Test
+			</div>
+			<div class="col-6">
+				Test 2
+			</div>
 		</div>
 	</div>
 </div>
