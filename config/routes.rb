@@ -1,7 +1,19 @@
 Rails.application.routes.draw do
+  get 'doctrine/index'
+  get 'sidebars/_corporation_sidebar'
+  get 'sidebars/_doctrine_sidebar'
+  get 'doctrine/shieldfleet'
+  get 'doctrine/armorfleet_ships'
+  get 'doctrine/shieldfleet_ships'
+  get 'doctrine/armorfleet_tactics'
+  get 'doctrine/armorfleet_minimums'
+  get 'doctrine/shieldfleet_ships'
+  get 'doctrine/shieldfleet_minimums'
+  get 'doctrine/armorfleet'
+  get 'doctrine/shieldfleet_tactics'
   get 'corporation/overview'
   get 'corporation/programs'
-  get 'corporation/fleetdoctrine'
+  get 'doctrine/fleetdoctrine'
   get 'members/console'
 
   devise_for :users

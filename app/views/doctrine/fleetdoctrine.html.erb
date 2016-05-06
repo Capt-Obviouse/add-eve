@@ -1,33 +1,6 @@
 
 <div class="row">
-	<div class="col-2">
-		<div class="content-background-fixed">
-			<div class="title">
-				MENU
-			</div>
-			<div>
-				&nbsp;
-			</div>
-			<div class="console-menu">
-				<ul class="console-menu">
-					<li class="title">Armor Fleet</li>
-					<li><%= link_to('Corporation', corporation_overview_path)  %></li>
-					<li><%= link_to('Fleet Doctrine', corporation_fleetdoctrine_path) %></li>
-					<li><%= link_to('Programs', corporation_programs_path) %></li>
-				</ul>
-			</div>
-			<div>
-					&nbsp;
-			</div>
-				<div class="console-menu">
-					<ul class="console-menu">
-					<li class="title">Shield Fleet</li>
-					<li><%= link_to('Edit Account', edit_user_registration_path)  %>  </li>
-					<li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
-				</ul>
-			</div>
-		</div>
-	</div>
+	<%= render 'sidebars/doctrine_sidebar' %>
 	<div class="col-10">
 		<div class="content-background">
 			<div class='title'>
