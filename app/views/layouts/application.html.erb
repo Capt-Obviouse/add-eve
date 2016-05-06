@@ -9,12 +9,7 @@
 </head>
 <body>
 <div id="container">
-	<div class="row">
-		<div class="col-12">
-			<p class="notice"><%= notice %></p>
-    		<p class="alert"><%= alert %></p>
-    	</div>
-	</div>
+
 	<div class='row'>
 		<div class="col-12">
 			<div class="nav">
@@ -40,10 +35,19 @@
 	<div class="footer">
 		<div class='row'>
 			<div class="col-6">
-				Footer Area 1
+				<p class="notice"><%= notice %></p>
+    			<p class="alert"><%= alert %></p>
 			</div>
 			<div class="col-6">
-				Footer area 2
+				<% if user_signed_in? %>
+  <li>
+  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Login', new_user_session_path)  %>  
+  </li>
+<% end %>
 			</div>
 		</div>
 	</div>
