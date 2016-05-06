@@ -7,5 +7,6 @@ class CorporationController < ApplicationController
   end
 
   def fleetdoctrine
+  	
   end
 end

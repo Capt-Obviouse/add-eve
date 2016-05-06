@@ -1,0 +1,39 @@
+	<div class="col-2">
+		<div class="console-menu">
+			<ul class="console-menu">
+				
+				<li class='title'>CORPORATION</li>
+				<li><%= link_to('Overview', corporation_overview_path)  %></li>
+				<li><%= link_to('Fleet Doctrine', doctrine_fleetdoctrine_path) %></li>
+				<li><%= link_to('Programs', corporation_programs_path) %></li>
+				<li><%= link_to('Rules', corporation_programs_path) %></li>
+				<li><%= link_to('Communications', corporation_programs_path) %></li>
+			</ul>
+		</div>
+		<div>
+				&nbsp;
+		</div>
+		<div class="console-menu">
+			<ul class="console-menu">
+				<li class='title'>PERSONAL</li>
+				<li><%= link_to('Characters', corporation_overview_path)  %></li>
+				<li><%= link_to('Industry Stuff', doctrine_fleetdoctrine_path) %></li>
+				<li><%= link_to('Assets', corporation_programs_path) %></li>
+				<li><%= link_to('Transactions', corporation_programs_path) %></li>
+				<li><%= link_to('Market Orders', corporation_programs_path) %></li>
+			</ul>
+		</div>
+		<div>
+				&nbsp;
+		</div>
+		<div class="console-menu">
+			<ul class="console-menu">
+				<li class='title'>ACCOUNT INFORMATION</li>
+				<li><%= link_to('Edit Account', edit_user_registration_path)  %>  </li>
+				<li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+			</ul>
+		</div>
+		<div>
+			&nbsp;
+		</div>
+	</div>

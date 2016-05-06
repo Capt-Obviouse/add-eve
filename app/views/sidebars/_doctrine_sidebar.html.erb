@@ -1,0 +1,24 @@
+<div class="col-2">
+	<div class="console-menu">
+		<ul class="console-menu">
+			<li class="title">Armor Fleet</li>
+			<li><%= link_to('Overview', doctrine_armorfleet_path)  %></li>
+			<li><%= link_to('Ships', doctrine_armorfleet_ships_path)  %></li>
+			<li><%= link_to('Tactics', doctrine_armorfleet_tactics_path) %></li>
+			<li><%= link_to('Minimums', doctrine_armorfleet_minimums_path) %></li>
+		</ul>
+	</div>
+	<div>
+		&nbsp;
+	</div>
+	<div class="console-menu">
+		<ul class="console-menu">
+			<li class="title">Shield Fleet</li>
+			<li><%= link_to('Overview', doctrine_shieldfleet_path)  %></li>
+			<li><%= link_to('Ships', doctrine_shieldfleet_ships_path)  %></li>
+			<li><%= link_to('Tactics', doctrine_shieldfleet_tactics_path) %></li>
+			<li><%= link_to('Minimums', doctrine_shieldfleet_minimums_path) %></li>
+		</ul>
+	</div>
+	<%= render 'sidebars/return_sidebar' %>
+</div>
