@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'corporation/overview'
+  get 'corporation/programs'
+  get 'corporation/fleetdoctrine'
+  get 'members/console'
+
   devise_for :users
   get 'home/console'
 
@@ -11,9 +16,11 @@ Rails.application.routes.draw do
   get '/home', to: 'home#index', as: 'Home'
   get '/about', to: 'home#about', as: 'About'
   get '/recruitment', to: 'home#recruitment', as: 'Recruitment'
-  get '/console', to: 'home#console', as: 'Console'
   get '/status', to: 'eve#status', as: 'Status'
-
+  get '/corporation', to: 'corporation#overview', as: 'Corporation'
+  get '/console', to: 'members#console', as: 'Console'
+  get '/fleetdoctrine', to: 'corporation#fleetdoctrine', as: "fleetdoctrine"
+  get '/programs', to: 'corporation#programs', as: "Programs"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

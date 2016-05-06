@@ -9,7 +9,12 @@
 </head>
 <body>
 <div id="container">
-
+	<div class='row'>
+		<div class="col-12">
+			<p class="notice"><%= notice %></p>
+			<p class="alert"><%= alert %></p>
+		</div>
+	</div>
 	<div class='row'>
 		<div class="col-12">
 			<div class="nav">
@@ -17,7 +22,7 @@
 					<li><%= link_to 'Home', root_path %> </li>
 					<li><%= link_to 'Recruitment', home_recruitment_path %> </li>
 					<li><%= link_to 'About', home_about_path %></li>
-					<li><%= link_to 'Console', home_console_path %></li>
+					<li><%= link_to 'Console', members_console_path %></li>
 					<li><%= link_to 'Status', eve_status_path %></li>
 					<li class="icon"><a href="javascript:void(0);" onclick="myFunction()">&#9776;</a></li>
 				</ul>
@@ -27,18 +32,14 @@
 
 	<div class="body">
 
-
 			<%= yield %>
 
 
 	</div>
 	<div class="footer">
 		<div class='row'>
-			<div class="col-6">
-				<p class="notice"><%= notice %></p>
-    			<p class="alert"><%= alert %></p>
-			</div>
-			<div class="col-6">
+
+			<div class="col-12">
 				<% if user_signed_in? %>
   <li>
   <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
