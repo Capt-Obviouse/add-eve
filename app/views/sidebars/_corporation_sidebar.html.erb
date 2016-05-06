@@ -1,11 +1,14 @@
 <div class="col-2">
 	<div class="console-menu">
 		<ul class="console-menu">
-			<li class="title">Corporation</li>
+			<li class="title">General Information</li>
 			<li><%= link_to('Overview', doctrine_armorfleet_path)  %></li>
+			<li><%= link_to('Structure', doctrine_armorfleet_path)  %></li>
+			<li><%= link_to('Responsibilities', doctrine_armorfleet_path)  %></li>
 			<li><%= link_to('Billets', doctrine_armorfleet_ships_path)  %></li>
 			<li><%= link_to('Mailing Lists', doctrine_armorfleet_tactics_path) %></li>
-			<li><%= link_to('Minimums', doctrine_armorfleet_minimums_path) %></li>
+			<li><%= link_to('Cash Flows', doctrine_armorfleet_minimums_path) %></li>
+			<li><%= link_to('Rules', doctrine_armorfleet_path)  %></li>
 		</ul>
 	</div>
 	<div>
@@ -13,9 +16,20 @@
 	</div>
 	<div class="console-menu">
 		<ul class="console-menu">
-			<li class="title">Alliance</li>
+			<li class="title">Financial Information</li>
 			<li><%= link_to('Overview', doctrine_shieldfleet_path)  %></li>
-			<li><%= link_to('Ships', doctrine_shieldfleet_ships_path)  %></li>
+			<li><%= link_to('Cash Flows', doctrine_shieldfleet_ships_path)  %></li>
+			<li><%= link_to('Business Plan', doctrine_shieldfleet_minimums_path) %></li>
+		</ul>
+	</div>
+	<div>
+		&nbsp;
+	</div>
+	<div class="console-menu">
+		<ul class="console-menu">
+			<li class="title">New Members</li>
+			<li><%= link_to('Overview', doctrine_shieldfleet_path)  %></li>
+			<li><%= link_to('Doctrine', doctrine_shieldfleet_ships_path)  %></li>
 			<li><%= link_to('Tactics', doctrine_shieldfleet_tactics_path) %></li>
 			<li><%= link_to('Minimums', doctrine_shieldfleet_minimums_path) %></li>
 		</ul>
