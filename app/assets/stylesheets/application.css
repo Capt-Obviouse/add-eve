@@ -32,7 +32,20 @@ div.body {
 	z-index: 1;
 	position: relative;
 }
-
+a:link {
+	font-family: "Lucida Sans", sans-serif;
+	color: #ccc;
+	text-decoration: none;
+}
+a:visited {
+	color: #ccc;
+}
+a:hover {
+	color: red;
+}
+a:active {
+	color: red;
+}
 html,
 body {
 	margin: 0;
@@ -56,6 +69,16 @@ body {
 
  * {
  	box-sizing: border-box;
+ }
+
+ div.content-background {
+ 	background-color: #333;
+ 	border-width: 1px;
+ 	border: solid;
+ 	border-color: black;
+ 	padding: 5px;
+ 	margin: 0;
+ 	color: #CCC;
  }
 
 /********************************************* MOBILE SIZE *********************************************/
@@ -221,3 +244,33 @@ div.footer {
 	background-color: #333;
 	z-index: 100;
 }			
+
+/********************************* CONSOLE ******************************/
+
+div.console-menu {
+	border-width: 1px;
+	border: solid;
+	border-color: black;
+	background-color: #333;
+}
+ul.console-menu {
+	margin: 0;
+	padding: 0;
+	padding-left: 15px;
+}
+li.title {
+	font-size: 25;
+	font-weight: bold;
+	text-decoration: underline;
+}
+ul.console-menu li {
+	text-decoration: none;
+	display: block;
+}
+
+
+/********************************* Page Titles ***************************/
+h1.title {
+	font-size: 35;
+	font-weight: bold;
+}
