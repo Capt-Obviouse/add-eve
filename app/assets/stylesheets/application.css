@@ -25,8 +25,8 @@
 }
 div.body {
 	margin: 0;
-	padding: 10px;
-	padding-top: 50px;
+	padding: 0px;
+	padding-top: 0px;
 	padding-bottom: 150px;
 	width: 100%;
 	z-index: 1;
@@ -57,7 +57,7 @@ body {
 }
 [class*="col-"] {
 	float: left;
-	padding: 15px;
+	padding: 10px;
 	border: 0px;
 }
 
@@ -65,6 +65,10 @@ body {
 	content: "";
 	clear: both;
 	display: block;
+}
+div.row {
+	padding: 0;
+	margin: 0;
 }
 
  * {
@@ -79,7 +83,21 @@ body {
  	padding: 5px;
  	margin: 0;
  	color: #CCC;
+ 	width: 100%;
+
  }
+ div.content-background-fixed {
+ 	background-color: #333;
+ 	border-width: 1px;
+ 	border: solid;
+ 	border-color: black;
+ 	padding: 5px;
+ 	margin: 0;
+ 	color: #CCC;
+ 	/*position: absolute;*/
+ 	width: 100%;
+ }
+
 
 /********************************************* MOBILE SIZE *********************************************/
 @media only screen and (max-width: 600px) {
@@ -214,10 +232,11 @@ div.nav {
 	overflow: hidden;
 	width: 100%;
 	left: 0px;
-	top: 0px;
+	top: 20px;
 	position: fixed;
 	z-index: 100;
 	background-color: #222;
+
 }
 
 ul.navigation-bar li {float: left;}
@@ -252,25 +271,60 @@ div.console-menu {
 	border: solid;
 	border-color: black;
 	background-color: #333;
+	margin: 0;
+	padding: 0;
 }
 ul.console-menu {
 	margin: 0;
 	padding: 0;
-	padding-left: 15px;
+	padding-left: 0px;
 }
 li.title {
 	font-size: 25;
 	font-weight: bold;
 	text-decoration: underline;
+	background-color: #000;
+	padding-left: 0;
+	margin: 0;
 }
 ul.console-menu li {
 	text-decoration: none;
 	display: block;
+	padding-left: 5px;
 }
 
 
+
+
 /********************************* Page Titles ***************************/
-h1.title {
-	font-size: 35;
+div.title {
+	font-size: 200%;
 	font-weight: bold;
+	background-color: #000;
+	padding: 0;
+	margin: 0;
+	vertical-align: top;
+	text-align: top;
+	padding-bottom: 20;
+}
+
+/*********************************** Login Bar ********************/
+
+div.login-bar {
+	width: 100%;
+	text-align: right;
+	text-decoration: none;
+	height: 20px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: #222;
+	z-index: 100;
+
+}
+ul.login-bar {
+	text-decoration: none;
+}
+li.login-bar a {
+	text-decoration: none;
 }

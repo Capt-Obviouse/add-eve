@@ -17,6 +17,23 @@
 	</div>
 	<div class='row'>
 		<div class="col-12">
+			<div class="login-bar">
+				
+					<% if user_signed_in? %>
+		  				<li class="login-bar">
+		 					 <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>    
+		  				</li>
+					<% else %>
+		  				<li class="login-bar">
+							  <%= link_to('Login', new_user_session_path)  %>  
+		  				</li>
+					<% end %>
+		
+			</div>
+		</div>
+	</div>
+	<div class='row'>
+		<div class="col-12">
 			<div class="nav">
 				<ul class='navigation-bar'>
 					<li><%= link_to 'Home', root_path %> </li>
@@ -32,25 +49,12 @@
 
 	<div class="body">
 
-			<%= yield %>
+	<%= yield %>
 
 
 	</div>
 	<div class="footer">
-		<div class='row'>
 
-			<div class="col-12">
-				<% if user_signed_in? %>
-  <li>
-  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
-  </li>
-<% else %>
-  <li>
-  <%= link_to('Login', new_user_session_path)  %>  
-  </li>
-<% end %>
-			</div>
-		</div>
 	</div>
 </div>
 </body>
