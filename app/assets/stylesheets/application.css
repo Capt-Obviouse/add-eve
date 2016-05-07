@@ -328,3 +328,18 @@ ul.login-bar {
 li.login-bar a {
 	text-decoration: none;
 }
+
+/*********************************** Notification Bar ********************/
+
+div.notification-bar {
+	width: 100%;
+	text-align: left;
+	text-decoration: none;
+	height: 20px;
+	position: fixed;
+	top: 30;
+	left: 0;
+	z-index: 200;
+	float: left;
+
+}

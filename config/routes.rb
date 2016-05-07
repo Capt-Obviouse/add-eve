@@ -14,25 +14,21 @@ Rails.application.routes.draw do
   get 'corporation/overview'
   get 'corporation/programs'
   get 'doctrine/fleetdoctrine'
-  get 'members/console'
 
-  devise_for :users
-  get 'home/console'
+  devise_for :users, :controllers => { registrations: 'registrations' }
 
-  get 'eve/status'
-  get 'home/index'
-  get 'home/about'
-  get 'home/recruitment'
+
 
   #MY LINKS
-  get '/home', to: 'home#index', as: 'Home'
-  get '/about', to: 'home#about', as: 'About'
-  get '/recruitment', to: 'home#recruitment', as: 'Recruitment'
-  get '/status', to: 'eve#status', as: 'Status'
-  get '/corporation', to: 'corporation#overview', as: 'Corporation'
-  get '/console', to: 'members#console', as: 'Console'
+  get '/home', to: 'home#index', as: 'home'
+  get '/about', to: 'home#about', as: 'about'
+  get '/recruitment', to: 'home#recruitment', as: 'recruitment'
+  get '/status', to: 'eve#status', as: 'status'
+  get '/corporation', to: 'corporation#overview', as: 'corporation'
+  get '/console', to: 'members#console', as: 'console'
   get '/fleetdoctrine', to: 'corporation#fleetdoctrine', as: "fleetdoctrine"
-  get '/programs', to: 'corporation#programs', as: "Programs"
+  get '/programs', to: 'corporation#programs', as: "programs"
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
