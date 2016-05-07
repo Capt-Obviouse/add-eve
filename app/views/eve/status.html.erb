@@ -5,3 +5,8 @@
 
 <h1>Welcome back <%= @characters.character_name %>!</h1>
 Here: <%= @current_u %>
+<br><br>
+<% @users = User.all %>
+<% @users.each do |user| %>
+  <%= user.email %><br/>
+<% end %>
