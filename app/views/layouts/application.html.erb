@@ -11,13 +11,15 @@
 <div id="container">
 	<div class='row'>
 		<div class="col-12">
-			<p class="notice"><%= notice %></p>
-			<p class="alert"><%= alert %></p>
+			<div class='notification-bar'>
+				<p class="notice"><%= notice %></p>
+				<p class="alert"><%= alert %></p>
+			</div>
 		</div>
 	</div>
 	<div class='row'>
 		<div class="col-12">
-			<div class="login-bar">
+			<div class="notif">
 				
 					<% if user_signed_in? %>
 		  				<li class="login-bar">
@@ -37,10 +39,10 @@
 			<div class="nav">
 				<ul class='navigation-bar'>
 					<li><%= link_to 'Home', root_path %> </li>
-					<li><%= link_to 'Recruitment', home_recruitment_path %> </li>
-					<li><%= link_to 'About', home_about_path %></li>
-					<li><%= link_to 'Console', members_console_path %></li>
-					<li><%= link_to 'Status', eve_status_path %></li>
+					<li><%= link_to 'Recruitment', recruitment_path %> </li>
+					<li><%= link_to 'About', about_path %></li>
+					<li><%= link_to 'Console', console_path %></li>
+					<li><%= link_to 'Status', status_path %></li>
 					<li class="icon"><a href="javascript:void(0);" onclick="myFunction()">&#9776;</a></li>
 				</ul>
 			</div>
