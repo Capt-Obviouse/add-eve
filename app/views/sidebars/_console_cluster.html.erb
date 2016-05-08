@@ -1,0 +1,119 @@
+	<div class="row">
+		<div class="col-3">
+			<div class="console-menu">
+				<ul class="console-menu">
+					<li class='title'>CORPORATION</li>
+					<li><%= link_to('Overview', corporation_overview_path)  %></li>
+					<li><%= link_to('Fleet Doctrine', doctrine_fleetdoctrine_path) %></li>
+					<li><%= link_to('Programs', corporation_programs_path) %></li>
+					<li><%= link_to('Rules', corporation_programs_path) %></li>
+					<li><%= link_to('Communications', corporation_programs_path) %></li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-3">
+			<div class="console-menu">
+				<ul class="console-menu">
+					<li class='title'>ALLIANCE</li>
+					<li><%= link_to('Overview', corporation_overview_path)  %></li>
+					<li><%= link_to('Fleet Doctrine', doctrine_fleetdoctrine_path) %></li>
+					<li><%= link_to('Programs', corporation_programs_path) %></li>
+					<li><%= link_to('Rules', corporation_programs_path) %></li>
+					<li><%= link_to('Communications', corporation_programs_path) %></li>
+					<li><%= link_to('Forums', corporation_programs_path) %></li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-3">
+			<div class="console-menu">
+			<ul class="console-menu">
+					<li class='title'>PERSONAL</li>
+					<li><%= link_to('Characters', corporation_overview_path)  %></li>
+					<li><%= link_to('Industry Stuff', doctrine_fleetdoctrine_path) %></li>
+					<li><%= link_to('Assets', corporation_programs_path) %></li>
+					<li><%= link_to('Transactions', corporation_programs_path) %></li>
+					<li><%= link_to('Market Orders', corporation_programs_path) %></li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-3">
+			<div class="console-menu">
+				<ul class="console-menu">
+					<li class='title'>OFFICERS</li>
+					<li><%= link_to('Overview', corporation_overview_path)  %></li>
+					<li><%= link_to('Recruiting', doctrine_fleetdoctrine_path) %></li>
+					<li><%= link_to('Reports', corporation_programs_path) %></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-3">
+			<div class="console-menu">
+				<ul class="console-menu">
+					<li class='title'>ACCOUNT INFORMATION</li>
+					<li><%= link_to('Edit Account', edit_user_registration_path)  %>  </li>
+					<li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-3">
+			<div class="console-menu">
+				<ul class="console-menu">
+					<li class="title">General Information</li>
+					<li><%= link_to('Overview', doctrine_armorfleet_path)  %></li>
+					<li><%= link_to('Structure', doctrine_armorfleet_path)  %></li>
+					<li><%= link_to('Responsibilities', doctrine_armorfleet_path)  %></li>
+					<li><%= link_to('Billets', doctrine_armorfleet_ships_path)  %></li>
+					<li><%= link_to('Mailing Lists', doctrine_armorfleet_tactics_path) %></li>
+					<li><%= link_to('Cash Flows', doctrine_armorfleet_minimums_path) %></li>
+					<li><%= link_to('Rules', doctrine_armorfleet_path)  %></li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-3">
+			<div class="console-menu">
+				<ul class="console-menu">
+					<li class="title">Financial Information</li>
+					<li><%= link_to('Overview', doctrine_shieldfleet_path)  %></li>
+					<li><%= link_to('Cash Flows', doctrine_shieldfleet_ships_path)  %></li>
+					<li><%= link_to('Business Plan', doctrine_shieldfleet_minimums_path) %></li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-3">
+			<div class="console-menu">
+				<ul class="console-menu">
+					<li class="title">New Members</li>
+					<li><%= link_to('Overview', doctrine_shieldfleet_path)  %></li>
+					<li><%= link_to('Doctrine', doctrine_shieldfleet_ships_path)  %></li>
+					<li><%= link_to('Tactics', doctrine_shieldfleet_tactics_path) %></li>
+					<li><%= link_to('Minimums', doctrine_shieldfleet_minimums_path) %></li>
+				</ul>
+			</div>
+		</div>						
+	</div>
+	<div class="row">
+		<div class="col-3">
+			<div class="console-menu">
+				<ul class="console-menu">
+					<li class="title">Armor Fleet</li>
+					<li><%= link_to('Overview', doctrine_armorfleet_path)  %></li>
+					<li><%= link_to('Ships', doctrine_armorfleet_ships_path)  %></li>
+					<li><%= link_to('Tactics', doctrine_armorfleet_tactics_path) %></li>
+					<li><%= link_to('Minimums', doctrine_armorfleet_minimums_path) %></li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-3">
+			<div class="console-menu">
+				<ul class="console-menu">
+					<li class="title">Shield Fleet</li>
+					<li><%= link_to('Overview', doctrine_shieldfleet_path)  %></li>
+					<li><%= link_to('Ships', doctrine_shieldfleet_ships_path)  %></li>
+					<li><%= link_to('Tactics', doctrine_shieldfleet_tactics_path) %></li>
+					<li><%= link_to('Minimums', doctrine_shieldfleet_minimums_path) %></li>
+				</ul>
+			</div>
+		</div>
+	</div>
