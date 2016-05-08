@@ -11,23 +11,24 @@ Rails.application.routes.draw do
   get 'doctrine/shieldfleet_minimums'
   get 'doctrine/armorfleet'
   get 'doctrine/shieldfleet_tactics'
-  get 'corporation/overview'
   get 'corporation/programs'
   get 'doctrine/fleetdoctrine'
+
   get 'sidebars/_console_cluster'
   devise_for :users, :controllers => { registrations: 'registrations' }
-
+  mount Thredded::Engine => '/forum'
 
 
   #MY LINKS
   get '/home', to: 'home#index', as: 'home'
   get '/about', to: 'home#about', as: 'about'
   get '/recruitment', to: 'home#recruitment', as: 'recruitment'
-  get '/status', to: 'eve#status', as: 'status'
   get '/corporation', to: 'corporation#overview', as: 'corporation'
   get '/console', to: 'members#console', as: 'console'
   get '/fleetdoctrine', to: 'corporation#fleetdoctrine', as: "fleetdoctrine"
   get '/programs', to: 'corporation#programs', as: "programs"
+  get 'corporation/overview', to: 'corporation#overview', as: 'overview'
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
