@@ -1,23 +1,27 @@
 <div class="row">
-	<%= render 'sidebars/console_sidebar' %>
-	<div class="col-10">
+
+	<div class="col-12">
 		<div class='title'>
 			Console
 		</div>
 		<div class="content-background">
 			<div>
+				<% @updateApi %>
 				<h3>Characters:</h3> <br>	
-				<% @characters.each do |a| %>
-					<%= a %><br>
+				<% @characterArray.each do |a| %>
+				<%= a %> <br>
 				<% end %>
-
+				
 				<br> <%= current_user.second_characters %> <br> <%= current_user.third_characters %><br>
 				Api ID: <%= current_user.api_keys %> <br>
 				API VCode: <%= current_user.api_vcodes %> <br>
+				DB Key: <%= @key_id %><br>
+				DB Vcode: <%= @v_code %><br>
 				Test: <%= @Test %>
 
 
 			</div>
 		</div>
 	</div>
+	<%= render 'sidebars/console_cluster' %>
 </div>

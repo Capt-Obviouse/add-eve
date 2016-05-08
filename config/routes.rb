@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get 'corporation/overview'
   get 'corporation/programs'
   get 'doctrine/fleetdoctrine'
-
+  get 'sidebars/_console_cluster'
   devise_for :users, :controllers => { registrations: 'registrations' }
 
 
