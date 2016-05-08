@@ -9,14 +9,14 @@ Thredded.user_class = 'User'
 
 # User name column, used in @mention syntax and should be unique.
 # This is the column used to search for users' names if/when someone is @ mentioned.
-Thredded.user_name_column = :user
+Thredded.user_name_column = :users
 
 # The path (or URL) you will use to link to your users' profiles.
 # When linking to a user, Thredded will use this lambda to spit out
 # the path or url to your user. This lambda is evaluated in the view context.
 Thredded.user_path = lambda do |user|
   user_path = :"#{Thredded.user_class.name.underscore}_path"
-  main_app.respond_to?(user_path) ? main_app.send(user_path, user) : "/users/#{user.to_param}"
+  main_app.respond_to?(user_path) ? main_app.send(user_path, user) : "/console"
 end
 
 # This method is used by Thredded controllers and views to fetch the currently signed-in user
