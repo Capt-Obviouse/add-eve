@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get 'doctrine/shieldfleet_tactics'
   get 'corporation/programs'
   get 'doctrine/fleetdoctrine'
-
+  get 'members/console'
   get 'sidebars/_console_cluster'
   devise_for :users, :controllers => { registrations: 'registrations' }
   mount Thredded::Engine => '/forum'
