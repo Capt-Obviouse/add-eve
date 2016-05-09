@@ -1,31 +1,52 @@
 <div class="row">
-
-	<div class="col-12">
-		<div class='title'>
-			Console
-		</div>
-		<div class="content-background">
-			<div>
-				<% @updateApi %>
-				<h3>Characters:</h3> <br>	
-				<% @characterArray.each do |a| %>
-				<%= a %> <br>
-				<% end %>
-				
-				<br> <%= current_user.second_characters %> <br> <%= current_user.third_characters %><br>
-				Api ID: <%= current_user.api_keys %> <br>
-				API VCode: <%= current_user.api_vcodes %> <br>
-				DB Key: <%= @key_id %><br>
-				DB Vcode: <%= @v_code %><br>
-				Test: <%= @Test %>
-
-				<br>
-
-				Test 2: <%= current_user.id %>
-
-
+	<div class='col-12'>
+		<div class='content-background'>
+			<div class="row">
+				<div class="col-12">
+					<div class='title'>
+						Console
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class='col-2'>
+					<h3>Characters:</h3>
+				</div>
+				<div class='col-10'>
+					<% @characterArray.each do |a| %>
+					<%= a %> <br>
+					<% end %>
+				</div>
+			</div>
+			<div class='row'>
+				<div class='col-2'>
+					<h3>API ID:</h3>
+				</div>
+				<div class='col-10'>
+					<%= current_user.api_keys %>
+				</div>
+			</div>
+			<div class='row'>
+				<div class='col-2'>
+					<h3>API VCode:</h3>
+				</div>
+				<div class='col-10'>
+					<%= current_user.api_vcodes %>
+				</div>
+			</div>
+			<div class='row'>
+				<div class='col-2'>
+					<h3>Last API Call:</h3>
+				</div>
+				<div class='col-10'>
+					<%= @Test %>
+				</div>
 			</div>
 		</div>
 	</div>
-	<%= render 'sidebars/console_cluster' %>
+</div>
+<div class="row">
+	<div class='col-12'>
+		<%= render 'sidebars/console_cluster' %>
+	</div>
 </div>
