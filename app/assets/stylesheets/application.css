@@ -273,8 +273,17 @@ div.console-menu {
 	border: solid;
 	border-color: black;
 	background-color: #333;
-	margin: 0;
+	margin: 20px;
+	width: 300px;
+	min-height: 200px;
 	padding: 0;
+	float: left;
+	
+}
+div.center-console {
+	width: 100%;
+	
+
 }
 ul.console-menu {
 	margin: 0;
