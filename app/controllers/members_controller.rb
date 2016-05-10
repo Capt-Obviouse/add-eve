@@ -24,6 +24,7 @@ class MembersController < ApplicationController
 			post_time = Time.new
 			current_user.last_api_call = post_time
 			current_user.characters = @characterOne
+			current_user.user = @characterOne
 			current_user.second_characters = @characterTwo
 			current_user.third_characters = @characterThree
 			current_user.save
