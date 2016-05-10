@@ -8,7 +8,7 @@ class MembersController < ApplicationController
 		past = past - 3601
 		@characterArray = Array.new
 		@current_user = current_user
-		@Test = current_user.last_api_call
+	
 
 		def addCharactersToArray
 			@account_status = EveOnline::Account::Status.new(@key_id, @v_code)
@@ -24,9 +24,12 @@ class MembersController < ApplicationController
 			post_time = Time.new
 			current_user.last_api_call = post_time
 			current_user.characters = @characterOne
-			current_user.user = @characterOne
+			current_user.users = @characterOne
 			current_user.second_characters = @characterTwo
 			current_user.third_characters = @characterThree
+				if current_user.users == nil
+					current_user.users = current_user.email
+				end
 			current_user.save
 
 		rescue Exception
@@ -40,6 +43,6 @@ class MembersController < ApplicationController
 			@characterArray.push current_user.second_characters
 			@characterArray.push current_user.third_characters
 		end
- 	
+ 		@Test = current_user.users
 	end
 end
