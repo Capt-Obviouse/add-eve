@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160510043158) do
+ActiveRecord::Schema.define(version: 20160510185432) do
+
+  create_table "characters", force: :cascade do |t|
+    t.integer "user_id"
+    t.string  "characterOne"
+    t.string  "characterTwo"
+    t.string  "characterThree"
+    t.integer "characterOneCorp"
+    t.integer "characterTwoCorp"
+    t.integer "characterThreeCorp"
+    t.integer "characterOnePrimary"
+    t.integer "characterTwoPrimary"
+    t.integer "characterThreePrimary"
+    t.string  "characterOneBalance"
+    t.string  "characterTwoBalance"
+    t.string  "characterThreeBalance"
+  end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",           limit: 191, null: false

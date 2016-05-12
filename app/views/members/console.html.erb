@@ -18,35 +18,29 @@
 					<% end %>
 				</div>
 			</div>
-			<div class='row'>
-				<div class='col-2'>
-					<h3>API ID:</h3>
-				</div>
-				<div class='col-10'>
-					<%= current_user.api_keys %>
-				</div>
-			</div>
-			<div class='row'>
-				<div class='col-2'>
-					<h3>API VCode:</h3>
-				</div>
-				<div class='col-10'>
-					<%= current_user.api_vcodes %>
-				</div>
-			</div>
-			<div class='row'>
-				<div class='col-2'>
-					<h3>Last API Call:</h3>
-				</div>
-				<div class='col-10'>
-					<%= @Test %>
-				</div>
-			</div>
 		</div>
 	</div>
 </div>
 <div class="row">
 	<div class='col-12'>
 		<%= render 'sidebars/console_cluster' %>
+	</div>
+</div>
+<div class='row'>
+	<div class='col-12'>
+		<div class='content-background'>
+			<div class='row'>
+				<div class='col-12'>
+					<div class='title'>
+					News
+					</div>
+				</div>
+			</div>
+			<div class='row'>
+				<div class='col-12'>
+						<%= render 'news/latest_posts' %>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>

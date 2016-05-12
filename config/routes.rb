@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'news/_latest_posts'
+
+  get 'news/index'
+
+  get 'character/index'
+
   get 'doctrine/index'
   get 'sidebars/_corporation_sidebar'
   get 'sidebars/_doctrine_sidebar'

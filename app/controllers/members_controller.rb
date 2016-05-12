@@ -36,7 +36,7 @@ class MembersController < ApplicationController
 			@characterArray.push 'Failed to connect to API Server (Check API Keys)'
 		end #end addCharactersToArray
 
-		if current_user.last_api_call.blank? or current_user.last_api_call < past #change to < 
+		if current_user.last_api_call.blank? or current_user.last_api_call < past 
 			addCharactersToArray
 		else
 			@characterArray.push current_user.characters
