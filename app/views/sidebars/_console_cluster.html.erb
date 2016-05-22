@@ -1,140 +1,151 @@
-					<% current_user.rank = 1 
-						current_user.save
-					%>	
-	<div class="row">
-		<div class="col-12">
-			<div class='center-console'>
-			<% if current_user.rank < 2 %>
+<% current_user.rank = 6 
+	current_user.save %>	
+<div class="row">
+	<div class="col-12">
+		<% if current_user.rank < 2 %>
 
 
-			<% end %>
-			<% if current_user.rank < 3 %>
-				<div class="console-menu">
-					<ul class="console-menu">
-						<li class='title'>OFFICERS</li>
-						<li><%= link_to('Overview', overview_path)  %></li>
-						<li><%= link_to('Recruiting', doctrine_fleetdoctrine_path) %></li>
-						<li><%= link_to('Reports', corporation_programs_path) %></li>
-						<li><%= link_to('Member List', corporation_programs_path) %></li>
-					</ul>
-				</div>
-				<div class="console-menu">
-					<ul class="console-menu">
-						<li class='title'>ALLIANCE</li>
-						<li><%= link_to('Mailing Lists', overview_path)  %></li>
-						<li><%= link_to('Fleet Doctrine', doctrine_fleetdoctrine_path) %></li>
-						<li><%= link_to('Programs', corporation_programs_path) %></li>
-						<li><%= link_to('Rules', corporation_programs_path) %></li>
-						<li><%= link_to('Communications', corporation_programs_path) %></li>
-						<li><%= link_to('Monthly Ops Plan', corporation_programs_path) %></li>
-						<li><%= link_to('Billets', character_index_path)  %></li>
-						<li><%= link_to('War Room', character_index_path)  %></li>
-					</ul>
-				</div>
-			<% end %>
-			<% if current_user.rank < 4 %>
+		<% end %>
+		<% if current_user.rank < 3 %>
+			<div class="console-menu">
+				<p class='title'>::: OFFICERS</p>
+				<ul class="console-menu">
 
-			<% end %>
-			<% if current_user.rank < 5 %>
+					<li><%= link_to(image_tag('items/10_64_10.png') + 'Overview', overview_path)  %></li>
+					<li><%= link_to('Recruiting', doctrine_fleetdoctrine_path) %></li>
+					<li><%= link_to('Reports', corporation_programs_path) %></li>
+					<li><%= link_to('Member List', corporation_programs_path) %></li>
+				</ul>
+			</div>
+			<div class="console-menu">
+				<p class='title'>::: Alliance</p>
+				<ul class="console-menu">
+					<li><%= link_to('Mailing Lists', overview_path)  %></li>
+					<li><%= link_to('Fleet Doctrine', doctrine_fleetdoctrine_path) %></li>
+					<li><%= link_to('Programs', corporation_programs_path) %></li>
+					<li><%= link_to('Rules', corporation_programs_path) %></li>
+					<li><%= link_to('Communications', corporation_programs_path) %></li>
+					<li><%= link_to('Monthly Ops Plan', corporation_programs_path) %></li>
+					<li><%= link_to('Billets', character_index_path)  %></li>
+					<li><%= link_to('War Room', character_index_path)  %></li>
+				</ul>
+			</div>
+		<% end %>
+		<% if current_user.rank < 4 %>
 
-			<% end %>
-			<% if current_user.rank < 6 %>
-				<div class="console-menu">
-					<ul class="console-menu">
-						<li class="title">War Room</li>
-						<li><%= link_to('Overview', doctrine_armorfleet_path)  %></li>
-						<li><%= link_to('Rules', doctrine_armorfleet_path)  %></li>
-						<li><%= link_to('Intel', doctrine_armorfleet_path)  %></li>
-					</ul>
-				</div>
-				<div class="console-menu">
-					<ul class="console-menu">
-						<li class='title'>CORPORATION INFORMATION</li>
-						<li><%= link_to('Overview', overview_path)  %></li>
-						<li><%= link_to('Fleet Doctrine', doctrine_fleetdoctrine_path) %></li>
-						<li><%= link_to('Rules', corporation_programs_path) %></li>
-						<li><%= link_to('Billets', overview_path)  %></li>
-					</ul>
-				</div>
-				<div class="console-menu">
-					<ul class="console-menu">
-						<li class='title'>Programs</li>
-						<li><%= link_to('Overview', overview_path)  %></li>
-						<li><%= link_to('Ship Replacement', doctrine_fleetdoctrine_path) %></li>
-						<li><%= link_to('Mineral Buy Back', corporation_programs_path) %></li>
-						<li><%= link_to('Game Enjoyment', corporation_programs_path) %></li>
+		<% end %>
+		<% if current_user.rank < 5 %>
 
-					</ul>
-				</div>
-				<div class="console-menu">
-					<ul class="console-menu">
-						<li class='title'>Operations</li>
-						<li><%= link_to('Overview', overview_path)  %></li>
-						<li><%= link_to('Calendar', doctrine_fleetdoctrine_path) %></li>
-						<li><%= link_to('Monthly Ops Plan', corporation_programs_path) %></li>
-					</ul>
-				</div>
-				<div class="console-menu">
-					<ul class="console-menu">
-						<li class="title">Communication</li>
-						<li><%= link_to('Mailing Lists', doctrine_armorfleet_path)  %></li>
-						<li><%= link_to('Team Speak', doctrine_armorfleet_path)  %></li>
-						<li><%= link_to('Jabber', doctrine_armorfleet_path)  %></li>
-						<li><%= link_to('Twitter', doctrine_armorfleet_ships_path)  %></li>
-						<li><%= link_to('Channels', doctrine_armorfleet_tactics_path) %></li>
-					</ul>
-				</div>
-				<div class='console-menu'>
-					<ul class='console-menu'>
-						<li class='title'>Corporate Finances</li>
-						<li><%= link_to('Overview', overview_path) %></li>
-						<li><%= link_to('Cash Flow', overview_path) %></li>
-						<li><%= link_to('Balance Sheet', overview_path) %> </li>
-					</ul>
-				</div>
-				<div class="console-menu">
-					<ul class="console-menu">
-						<li class="title">General Information</li>
-						<li><%= link_to('Overview', doctrine_armorfleet_path)  %></li>
-						<li><%= link_to('Structure', doctrine_armorfleet_path)  %></li>
-						<li><%= link_to('Responsibilities', doctrine_armorfleet_path)  %></li>
-						<li><%= link_to('Billets', doctrine_armorfleet_ships_path)  %></li>
-						<li><%= link_to('Mailing Lists', doctrine_armorfleet_tactics_path) %></li>
-						<li><%= link_to('Cash Flows', doctrine_armorfleet_minimums_path) %></li>
-						<li><%= link_to('Rules', doctrine_armorfleet_path)  %></li>
-					</ul>
-				</div>
-	
-			<% end %>
-			<% if current_user.rank > 0 %>
-				<div class="console-menu">
-					<ul class="console-menu">
-						<li class="title">New Members</li>
-						<li><%= link_to('Overview', doctrine_shieldfleet_path)  %></li>
-						<li><%= link_to('Doctrine', doctrine_shieldfleet_ships_path)  %></li>
-						<li><%= link_to('Good Links', doctrine_shieldfleet_tactics_path) %></li>
-						<li><%= link_to('Mentor List', overview_path) %>
-					</ul>
-				</div>
-				<div class="console-menu">
-					<ul class="console-menu">
-						<li class='title'>EvE Account Information</li>
-						<li><%= link_to('Characters', character_index_path)  %></li>
-						<li><%= link_to('API Key', doctrine_fleetdoctrine_path) %></li>
-						<li><%= link_to('Assets', corporation_programs_path) %></li>
-						<li><%= link_to('Transactions', corporation_programs_path) %></li>
-						<li><%= link_to('Market Orders', corporation_programs_path) %></li>
-						<li><%= link_to('Industry', character_index_path)  %></li>
-					</ul>
-				</div>
-				<div class="console-menu">
-					<ul class="console-menu">
-						<li class='title'>Web Account</li>
-						<li><%= link_to('Change Email', edit_user_registration_path)  %>  </li>
-						<li><%= link_to('Change Password', overview_path) %></li>
-						<li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
-					</ul>
-				</div>
-			<% end %>
-		</div>
+		<% end %>
+		<% if current_user.rank < 6 %>
+			<div class="console-menu">
+				<p class='title'>::: War Room</p>
+				<ul class="console-menu">
+					<li><%= link_to('Overview', doctrine_armorfleet_path)  %></li>
+					<li><%= link_to('Rules', doctrine_armorfleet_path)  %></li>
+					<li><%= link_to('Intel', doctrine_armorfleet_path)  %></li>
+				</ul>
+			</div>
+			<div class="console-menu">
+				<p class='title'>::: CORPORATION INFORMATION</p>
+				<ul class="console-menu">
+					<li><%= link_to('Overview', overview_path)  %></li>
+					<li><%= link_to('Fleet Doctrine', doctrine_fleetdoctrine_path) %></li>
+					<li><%= link_to('Rules', corporation_programs_path) %></li>
+					<li><%= link_to('Billets', overview_path)  %></li>
+				</ul>
+			</div>
+			<div class="console-menu">
+				<p class='title'>::: Programs</p>
+				<ul class="console-menu">
+					<li><%= link_to('Overview', overview_path)  %></li>
+					<li><%= link_to('Ship Replacement', doctrine_fleetdoctrine_path) %></li>
+					<li><%= link_to('Mineral Buy Back', corporation_programs_path) %></li>
+					<li><%= link_to('Game Enjoyment', corporation_programs_path) %></li>
+
+				</ul>
+			</div>
+			<div class="console-menu">
+				<p class='title'>::: Operations</p>
+				<ul class="console-menu">
+					<li><%= link_to('Overview', overview_path)  %></li>
+					<li><%= link_to('Calendar', doctrine_fleetdoctrine_path) %></li>
+					<li><%= link_to('Monthly Ops Plan', corporation_programs_path) %></li>
+				</ul>
+			</div>
+			<div class="console-menu">
+				<p class='title'>::: Communication</p>
+				<ul class="console-menu">
+					<li><%= link_to('Mailing Lists', doctrine_armorfleet_path)  %></li>
+					<li><%= link_to('Team Speak', doctrine_armorfleet_path)  %></li>
+					<li><%= link_to('Jabber', doctrine_armorfleet_path)  %></li>
+					<li><%= link_to('Twitter', doctrine_armorfleet_ships_path)  %></li>
+					<li><%= link_to('Channels', doctrine_armorfleet_tactics_path) %></li>
+				</ul>
+			</div>
+			<div class='console-menu'>
+				<p class='title'>::: Corporate Finances</p>
+				<ul class='console-menu'>
+					<li><%= link_to('Overview', overview_path) %></li>
+					<li><%= link_to('Cash Flow', overview_path) %></li>
+					<li><%= link_to('Balance Sheet', overview_path) %> </li>
+				</ul>
+			</div>
+			<div class="console-menu">
+				<p class='title'>::: General Information</p>
+				<ul class="console-menu">
+					<li><%= link_to('Overview', doctrine_armorfleet_path)  %></li>
+					<li><%= link_to('Structure', doctrine_armorfleet_path)  %></li>
+					<li><%= link_to('Responsibilities', doctrine_armorfleet_path)  %></li>
+					<li><%= link_to('Billets', doctrine_armorfleet_ships_path)  %></li>
+					<li><%= link_to('Mailing Lists', doctrine_armorfleet_tactics_path) %></li>
+					<li><%= link_to('Cash Flows', doctrine_armorfleet_minimums_path) %></li>
+					<li><%= link_to('Rules', doctrine_armorfleet_path)  %></li>
+				</ul>
+			</div>
+
+		<% end %>
+		<% if current_user.rank > 0 %>
+			<div class="console-menu">
+				<p class='title'>::: New Members</p>
+				<ul class="console-menu">
+					<li>
+						<%= link_to(image_tag('items/74_64_13.png'), doctrine_shieldfleet_path) %>
+						<br><%= link_to('Overview', doctrine_shieldfleet_path)  %>
+					</li>
+					<li>
+						<%= link_to(image_tag('items/31_64_3.png'), doctrine_shieldfleet_ships_path) %>
+						<br><%= link_to('Doctrine', doctrine_shieldfleet_path)  %>
+					</li>
+					<li>
+						<%= link_to(image_tag('items/99_64_6.png'), doctrine_shieldfleet_ships_path) %>
+						<br><%= link_to('Good Links', doctrine_shieldfleet_path)  %>
+					</li>
+					<li>
+						<%= link_to(image_tag('items/46_64_11.png'), doctrine_shieldfleet_ships_path) %>
+						<br><%= link_to('Mentor List', doctrine_shieldfleet_path)  %>
+					</li>
+				</ul>
+			</div>
+			<div class="console-menu">
+				<p class='title'>::: EvE Account Information</p>
+				<ul class="console-menu">
+					<li><%= link_to('Characters', character_index_path)  %></li>
+					<li><%= link_to('API Key', doctrine_fleetdoctrine_path) %></li>
+					<li><%= link_to('Assets', corporation_programs_path) %></li>
+					<li><%= link_to('Transactions', corporation_programs_path) %></li>
+					<li><%= link_to('Market Orders', corporation_programs_path) %></li>
+					<li><%= link_to('Industry', character_index_path)  %></li>
+				</ul>
+			</div> 
+			<div class="console-menu">
+				<p class='title'>::: Web Account</p>
+				<ul class="console-menu">
+					<li><%= link_to('Change Email', edit_user_registration_path)  %>  </li>
+					<li><%= link_to('Change Password', overview_path) %></li>
+					<li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+				</ul>
+			</div>
+		<% end %>
 	</div>
+</div>
