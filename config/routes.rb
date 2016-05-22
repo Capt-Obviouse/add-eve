@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'members/EditPassword'
+
+  get 'members/EditEmail'
+
+  get 'members/EditApi'
+
   get 'news/_latest_posts'
 
   get 'news/index'
