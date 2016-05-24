@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'news/add'
+
   get 'members/EditPassword'
 
   get 'members/EditEmail'
