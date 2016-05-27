@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :news
   get 'news/add'
 
   get 'members/EditPassword'
