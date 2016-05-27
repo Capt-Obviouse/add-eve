@@ -13,8 +13,8 @@
 
   <div class="field">
     <% mentor_list = User.all %>
-    <%= f.select(:user_id) %>
-    <%= collection_select(:user_id, 0, User.all, :id, :users) %>
+    <%= f.select :user_id, User.all.collect {|f| [ "#{f.users}", f.id ] }  %>
+   
   </div>
   <div class="actions">
     <%= f.submit %>
