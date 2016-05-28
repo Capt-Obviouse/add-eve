@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Forum:</strong>
+  <%= @admin.forum %>
+</p>
+
+<p>
+  <strong>Rank:</strong>
+  <%= @admin.rank %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @admin.user %>
+</p>
+
+<%= link_to 'Edit', edit_admin_path(@admin) %> |
+<%= link_to 'Back', admins_path %>

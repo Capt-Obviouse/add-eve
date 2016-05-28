@@ -3,6 +3,10 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
+  has_one :view_setting, :dependent => :destroy
+  has_one :admin, :dependent => :destroy
+  has_one :mentor, :dependent => :destroy
+  after_save :after_create
 
   def to_s
   	users
@@ -22,5 +26,12 @@ class User < ActiveRecord::Base
   def admin=(value)
   	super(value || false)
   end
-
+  def after_create
+    newView = ViewSetting.new
+    newView.user_id = self.id
+    newView.save
+    newView = Admin.new
+    newView.user_id = self.id
+    newView.save
+  end
 end

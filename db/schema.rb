@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160527180340) do
+ActiveRecord::Schema.define(version: 20160527231245) do
+
+  create_table "admins", force: :cascade do |t|
+    t.integer  "forum"
+    t.integer  "rank"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "admins", ["user_id"], name: "index_admins_on_user_id"
 
   create_table "characters", force: :cascade do |t|
     t.integer "user_id"
@@ -268,5 +278,21 @@ ActiveRecord::Schema.define(version: 20160527180340) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   add_index "users", ["users"], name: "users_nocase", unique: true
+
+  create_table "view_settings", force: :cascade do |t|
+    t.integer  "corporation_information", default: 1
+    t.integer  "programs",                default: 1
+    t.integer  "operations",              default: 1
+    t.integer  "communications",          default: 1
+    t.integer  "finances",                default: 1
+    t.integer  "general_information",     default: 1
+    t.integer  "new_members",             default: 1
+    t.integer  "eve_account_information", default: 1
+    t.integer  "user_id"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
+
+  add_index "view_settings", ["user_id"], name: "index_view_settings_on_user_id"
 
 end

@@ -1,0 +1,52 @@
+<%= form_for(@view_setting) do |f| %>
+  <% if @view_setting.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@view_setting.errors.count, "error") %> prohibited this view_setting from being saved:</h2>
+
+      <ul>
+      <% @view_setting.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :corporation_information %><br>
+    <%= f.check_box :corporation_information %>
+  </div>
+  <div class="field">
+    <%= f.label :programs %><br>
+    <%= f.check_box :programs %>
+  </div>
+  <div class="field">
+    <%= f.label :operations %><br>
+    <%= f.check_box :operations %>
+  </div>
+  <div class="field">
+    <%= f.label :communications %><br>
+    <%= f.check_box :communications %>
+  </div>
+  <div class="field">
+    <%= f.label :finances %><br>
+    <%= f.check_box :finances %>
+  </div>
+  <div class="field">
+    <%= f.label :general_information %><br>
+    <%= f.check_box :general_information %>
+  </div>
+  <div class="field">
+    <%= f.label :new_members %><br>
+    <%= f.check_box :new_members %>
+  </div>
+  <div class="field">
+    <%= f.label :eve_account_information %><br>
+    <%= f.check_box :eve_account_information %>
+  </div>
+  <div class="field">
+ <%= f.hidden_field(:user_id, :value => current_user.id) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

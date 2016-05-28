@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Corporation information:</strong>
+  <%= @view_setting.corporation_information %>
+</p>
+
+<p>
+  <strong>Programs:</strong>
+  <%= @view_setting.programs %>
+</p>
+
+<p>
+  <strong>Operations:</strong>
+  <%= @view_setting.operations %>
+</p>
+
+<p>
+  <strong>Communications:</strong>
+  <%= @view_setting.communications %>
+</p>
+
+<p>
+  <strong>Finances:</strong>
+  <%= @view_setting.finances %>
+</p>
+
+<p>
+  <strong>General information:</strong>
+  <%= @view_setting.general_information %>
+</p>
+
+<p>
+  <strong>New members:</strong>
+  <%= @view_setting.new_members %>
+</p>
+
+<p>
+  <strong>Eve account information:</strong>
+  <%= @view_setting.eve_account_information %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @view_setting.user %>
+</p>
+
+<%= link_to 'Edit', edit_view_setting_path(@view_setting) %> |
+<%= link_to 'Back', view_settings_path %>

@@ -1,2 +1,7 @@
-<h1>News#_latest_posts</h1>
-<p>Find me in app/views/news/_latest_posts.html.erb</p>
+    <% @news.each do |news| %>
+    <h2><%= news.title %> </h3>
+    <p class='small'>By: <%= news.user %></p
+    <p><%= news.article %></p>
+    <br>
+    <% end %>
+

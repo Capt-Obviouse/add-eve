@@ -1,0 +1,1 @@
+json.extract! @view_setting, :id, :corporation_information, :programs, :operations, :communications, :finances, :general_information, :new_members, :eve_account_information, :user_id, :created_at, :updated_at

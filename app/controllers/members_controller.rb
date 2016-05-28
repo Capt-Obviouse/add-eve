@@ -44,5 +44,16 @@ class MembersController < ApplicationController
 			@characterArray.push current_user.third_characters
 		end
  		@Test = current_user.users
+ 		@news = News.all
+ 		@at_war = 0
+ 		view = ViewSetting.find(current_user)
+  		@show_corporation_information = view.corporation_information		
+ 		@show_programs = view.programs
+  		@show_operations = view.operations
+ 		@show_communications = view.communications
+  		@show_finances = view.finances
+ 		@show_general_information = view.general_information
+ 		@show_new_members = view.new_members
+ 		@show_eve_account_information = view.eve_account_information
 	end
 end

@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  corporation_information: 1
+  programs: 1
+  operations: 1
+  communications: 1
+  finances: 1
+  general_information: 1
+  new_members: 1
+  eve_account_information: 1
+  user_id: 
+
+two:
+  corporation_information: 1
+  programs: 1
+  operations: 1
+  communications: 1
+  finances: 1
+  general_information: 1
+  new_members: 1
+  eve_account_information: 1
+  user_id: 

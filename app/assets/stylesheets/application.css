@@ -98,7 +98,13 @@ div.row {
  	/*position: absolute;*/
  	width: 100%;
  }
-
+p.small {
+	font-size: 3;
+	font-style: italic;
+	padding-bottom: 15px;
+	padding-top: 0px;
+	margin: 0px;
+}
 
 /********************************************* MOBILE SIZE *********************************************/
 @media only screen and (max-width: 600px) {
