@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :programs
   resources :admins
   resources :view_settings
   resources :mentors
@@ -44,7 +45,6 @@ Rails.application.routes.draw do
   get '/corporation', to: 'corporation#overview', as: 'corporation'
   get '/console', to: 'members#console', as: 'console'
   get '/fleetdoctrine', to: 'corporation#fleetdoctrine', as: "fleetdoctrine"
-  get '/programs', to: 'corporation#programs', as: "programs"
   get 'corporation/overview', to: 'corporation#overview', as: 'overview'
 
 

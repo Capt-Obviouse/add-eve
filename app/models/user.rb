@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   has_one :view_setting, :dependent => :destroy
   has_one :admin, :dependent => :destroy
   has_one :mentor, :dependent => :destroy
+  has_many :program
   after_save :after_create
 
   def to_s

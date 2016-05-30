@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Officers</th>
       <th>Corporation information</th>
       <th>Programs</th>
       <th>Operations</th>
@@ -21,6 +22,7 @@
   <tbody>
     <% @view_settings.each do |view_setting| %>
       <tr>
+        <td><%= view_setting.officers %></td>
         <td><%= view_setting.corporation_information %></td>
         <td><%= view_setting.programs %></td>
         <td><%= view_setting.operations %></td>

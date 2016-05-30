@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160527231245) do
+ActiveRecord::Schema.define(version: 20160530215420) do
 
   create_table "admins", force: :cascade do |t|
-    t.integer  "forum"
-    t.integer  "rank"
+    t.integer  "forum",      default: 1
+    t.integer  "rank",       default: 1
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   add_index "admins", ["user_id"], name: "index_admins_on_user_id"
@@ -70,6 +70,16 @@ ActiveRecord::Schema.define(version: 20160527231245) do
   end
 
   add_index "news", ["user_id"], name: "index_news_on_user_id"
+
+  create_table "programs", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "programs", ["user_id"], name: "index_programs_on_user_id"
 
   create_table "thredded_categories", force: :cascade do |t|
     t.integer  "messageboard_id",             null: false
@@ -291,6 +301,8 @@ ActiveRecord::Schema.define(version: 20160527231245) do
     t.integer  "user_id"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.integer  "officers",                default: 1
+    t.integer  "directors",               default: 1
   end
 
   add_index "view_settings", ["user_id"], name: "index_view_settings_on_user_id"

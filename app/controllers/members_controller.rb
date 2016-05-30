@@ -45,7 +45,12 @@ class MembersController < ApplicationController
 		end
  		@Test = current_user.users
  		@news = News.all
+
+ 		#ADD TABLE LATER
  		@at_war = 0
+ 		@in_alliance = 0
+
+
  		view = ViewSetting.find(current_user)
   		@show_corporation_information = view.corporation_information		
  		@show_programs = view.programs
@@ -55,5 +60,7 @@ class MembersController < ApplicationController
  		@show_general_information = view.general_information
  		@show_new_members = view.new_members
  		@show_eve_account_information = view.eve_account_information
+ 		@show_officers = view.officers
+ 		@show_directors = view.directors
 	end
 end
