@@ -69,6 +69,6 @@ class ViewSettingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def view_setting_params
-      params.require(:view_setting).permit(:officers, :corporation_information, :programs, :operations, :communications, :finances, :general_information, :new_members, :eve_account_information, :user_id)
+      params.require(:view_setting).permit(:directors, :officers, :corporation_information, :programs, :operations, :communications, :finances, :general_information, :new_members, :eve_account_information, :user_id)
     end
 end

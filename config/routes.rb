@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :usernames
   resources :programs
   resources :admins
   resources :view_settings

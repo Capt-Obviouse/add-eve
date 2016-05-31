@@ -6,11 +6,12 @@ class User < ActiveRecord::Base
   has_one :view_setting, :dependent => :destroy
   has_one :admin, :dependent => :destroy
   has_one :mentor, :dependent => :destroy
+  has_one :username, :dependent => :destroy
   has_many :program
   after_save :after_create
 
   def to_s
-  	users
+  	self.username.username
   end
   def to_param
   		name.parameterize
@@ -28,11 +29,14 @@ class User < ActiveRecord::Base
   	super(value || false)
   end
   def after_create
-    newView = ViewSetting.new
-    newView.user_id = self.id
-    newView.save
-    newView = Admin.new
-    newView.user_id = self.id
-    newView.save
+    #newView = ViewSetting.new
+    #newView.user_id = self.id
+    #newView.save
+    #newView = Admin.new
+    #newView.user_id = self.id
+    #newView.save
+    ViewSetting.create(:user_id => self.id)
+    Admin.create(:user_id => self.id)
+    Username.create(:username => self.email, :user_id => self.id)
   end
 end

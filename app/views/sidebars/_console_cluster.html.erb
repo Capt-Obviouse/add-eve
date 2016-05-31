@@ -1,47 +1,48 @@
-<% current_user.rank = 1 
-	current_user.save %>	
+<% current_user.admin.rank = 1
+	current_user.admin.forum = 1
+	current_user.admin.save %>	
 <div class="row">
 	<div class="col-12">
-		<% if current_user.rank < 2 %>
+		<% if current_user.admin.rank < 2 %>
 			<% if @show_directors > 0 %>
 				<div class="console-menu">
 					<p class='title'>::: Directors</p>
 					<ul class="console-menu">
 
 						<li>
-							<%= link_to(image_tag('items/10_64_10.png') + 'Admins', admins_path)  %>
+							<%= link_to(image_tag('items/10_64_10.png') + '<br />Admins'.html_safe, admins_path)  %>
 						</li>
 						<li>
-							<%= link_to(image_tag('items/10_64_10.png') + 'Programs', programs_path)  %>
+							<%= link_to(image_tag('items/10_64_10.png') + '<br />Programs'.html_safe, programs_path)  %>
 						</li>
 					</ul>
 				</div>
 			<% end %>
 
 		<% end %>
-		<% if current_user.rank < 3 %>
+		<% if current_user.admin.rank < 3 %>
 			<% if @show_officers > 0 %>
 				<div class="console-menu">
 					<p class='title'>::: Officers</p>
 					<ul class="console-menu">
 						<li>
-							<%= link_to(image_tag('items/10_64_10.png') + 'Mentors', mentors_path)  %>
+							<%= link_to(image_tag('items/10_64_10.png') + '<br />Mentors'.html_safe, mentors_path)  %>
 						</li>
 						<li>
-							<%= link_to(image_tag('items/10_64_10.png') + 'Post News', new_news_path)  %>
+							<%= link_to(image_tag('items/10_64_10.png') + '<br />Post News'.html_safe, new_news_path)  %>
 						</li>
 					</ul>
 				</div>
 			<% end %>
 			
 		<% end %>
-		<% if current_user.rank < 4 %>
+		<% if current_user.admin.rank < 4 %>
 
 		<% end %>
-		<% if current_user.rank < 5 %>
+		<% if current_user.admin.rank < 5 %>
 
 		<% end %>
-		<% if current_user.rank < 6 %>
+		<% if current_user.admin.rank < 6 %>
 			<% if @at_war > 0 %>
 				<div class="console-menu">
 					<p class='title'>::: War Room</p>
@@ -98,6 +99,7 @@
 				<div class="console-menu">
 					<p class='title'>::: Operations</p>
 					<ul class="console-menu">
+
 						<li><%= link_to('Overview', overview_path)  %></li>
 						<li><%= link_to('Calendar', doctrine_fleetdoctrine_path) %></li>
 						<li><%= link_to('Monthly Ops Plan', corporation_programs_path) %></li>
@@ -141,25 +143,22 @@
 				</div>
 			<% end %>
 		<% end %>
-		<% if current_user.rank > 0 %>
+		<% if current_user.admin.rank > 0 %>
 			<% if @show_new_members > 0 %>
 				<div class="console-menu">
 					<p class='title'>::: New Members</p>
 					<ul class="console-menu">
 						<li>
-							<%= link_to(image_tag('items/74_64_13.png'), doctrine_shieldfleet_path) %>
-							<br><%= link_to('Overview', doctrine_shieldfleet_path)  %>
+							<%= link_to(image_tag('items/74_64_13.png') + "<br />Overview".html_safe, doctrine_shieldfleet_path) %>
 						</li>
 						<li>
-							<%= link_to(image_tag('items/31_64_3.png'), doctrine_shieldfleet_ships_path) %>
-							<br><%= link_to('Doctrine', doctrine_shieldfleet_path)  %>
+							<%= link_to(image_tag('items/31_64_3.png') + "<br />Doctrine".html_safe, doctrine_shieldfleet_ships_path) %>
 						</li>
 						<li>
-							<%= link_to(image_tag('items/99_64_6.png'), doctrine_shieldfleet_ships_path) %>
-							<br><%= link_to('Good Links', doctrine_shieldfleet_path)  %>
+							<%= link_to(image_tag('items/99_64_6.png') + "<br />Good Links".html_safe, doctrine_shieldfleet_ships_path) %>
 						</li>
 						<li>
-							<%= link_to(image_tag('items/46_64_11.png') + 'Mentor List', mentors_path) %>
+							<%= link_to(image_tag('items/46_64_11.png') + "<br />Mentor List".html_safe, mentors_path) %>
 							<br>
 						</li>
 					</ul>

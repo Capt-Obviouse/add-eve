@@ -9,6 +9,8 @@ class CreateViewSettings < ActiveRecord::Migration
       t.integer :general_information, :default => 1
       t.integer :new_members, :default => 1
       t.integer :eve_account_information, :default => 1
+      t.integer :officers, :default => 1
+      t.integer :directors, :default => 1
       t.references :user, index: true, foreign_key: true
 
       t.timestamps null: false

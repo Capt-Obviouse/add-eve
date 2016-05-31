@@ -11,46 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160530215420) do
+ActiveRecord::Schema.define(version: 20160530234054) do
 
   create_table "admins", force: :cascade do |t|
-    t.integer  "forum",      default: 1
-    t.integer  "rank",       default: 1
+    t.integer  "forum",      default: 6
+    t.integer  "rank",       default: 6
     t.integer  "user_id"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
 
   add_index "admins", ["user_id"], name: "index_admins_on_user_id"
-
-  create_table "characters", force: :cascade do |t|
-    t.integer "user_id"
-    t.string  "characterOne"
-    t.string  "characterTwo"
-    t.string  "characterThree"
-    t.integer "characterOneCorp"
-    t.integer "characterTwoCorp"
-    t.integer "characterThreeCorp"
-    t.integer "characterOnePrimary"
-    t.integer "characterTwoPrimary"
-    t.integer "characterThreePrimary"
-    t.string  "characterOneBalance"
-    t.string  "characterTwoBalance"
-    t.string  "characterThreeBalance"
-  end
-
-  create_table "friendly_id_slugs", force: :cascade do |t|
-    t.string   "slug",           limit: 191, null: false
-    t.integer  "sluggable_id",               null: false
-    t.string   "sluggable_type", limit: 50
-    t.string   "scope",          limit: 191
-    t.datetime "created_at",                 null: false
-  end
-
-  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
-  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
-  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
-  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
 
   create_table "mentors", force: :cascade do |t|
     t.integer  "user_id"
@@ -81,187 +52,22 @@ ActiveRecord::Schema.define(version: 20160530215420) do
 
   add_index "programs", ["user_id"], name: "index_programs_on_user_id"
 
-  create_table "thredded_categories", force: :cascade do |t|
-    t.integer  "messageboard_id",             null: false
-    t.string   "name",            limit: 191, null: false
-    t.string   "description",     limit: 255
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.string   "slug",            limit: 191, null: false
+  create_table "usernames", force: :cascade do |t|
+    t.string   "username"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  add_index "thredded_categories", ["messageboard_id", "slug"], name: "index_thredded_categories_on_messageboard_id_and_slug", unique: true
-  add_index "thredded_categories", ["messageboard_id"], name: "index_thredded_categories_on_messageboard_id"
-  add_index "thredded_categories", ["name"], name: "thredded_categories_name_ci"
-
-  create_table "thredded_messageboard_users", force: :cascade do |t|
-    t.integer  "thredded_user_detail_id",  null: false
-    t.integer  "thredded_messageboard_id", null: false
-    t.datetime "last_seen_at",             null: false
-  end
-
-  add_index "thredded_messageboard_users", ["thredded_messageboard_id", "last_seen_at"], name: "index_thredded_messageboard_users_for_recently_active"
-  add_index "thredded_messageboard_users", ["thredded_messageboard_id", "thredded_user_detail_id"], name: "index_thredded_messageboard_users_primary"
-
-  create_table "thredded_messageboards", force: :cascade do |t|
-    t.string   "name",         limit: 255,                 null: false
-    t.string   "slug",         limit: 191
-    t.text     "description"
-    t.integer  "topics_count",             default: 0
-    t.integer  "posts_count",              default: 0
-    t.boolean  "closed",                   default: false, null: false
-    t.datetime "created_at",                               null: false
-    t.datetime "updated_at",                               null: false
-  end
-
-  add_index "thredded_messageboards", ["closed"], name: "index_thredded_messageboards_on_closed"
-  add_index "thredded_messageboards", ["slug"], name: "index_thredded_messageboards_on_slug"
-
-  create_table "thredded_post_notifications", force: :cascade do |t|
-    t.string   "email",      limit: 191, null: false
-    t.integer  "post_id",                null: false
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.string   "post_type",  limit: 191
-  end
-
-  add_index "thredded_post_notifications", ["post_id", "post_type"], name: "index_thredded_post_notifications_on_post"
-
-  create_table "thredded_posts", force: :cascade do |t|
-    t.integer  "user_id",         limit: 4
-    t.text     "content",         limit: 65535
-    t.string   "ip",              limit: 255
-    t.string   "source",          limit: 255,   default: "web"
-    t.integer  "postable_id",     limit: 4
-    t.integer  "messageboard_id",                               null: false
-    t.datetime "created_at",                                    null: false
-    t.datetime "updated_at",                                    null: false
-  end
-
-  add_index "thredded_posts", ["messageboard_id"], name: "index_thredded_posts_on_messageboard_id"
-  add_index "thredded_posts", ["postable_id"], name: "index_thredded_posts_on_postable_id"
-  add_index "thredded_posts", ["postable_id"], name: "index_thredded_posts_on_postable_id_and_postable_type"
-  add_index "thredded_posts", ["user_id"], name: "index_thredded_posts_on_user_id"
-
-  create_table "thredded_private_posts", force: :cascade do |t|
-    t.integer  "user_id",     limit: 4
-    t.text     "content",     limit: 65535
-    t.string   "ip",          limit: 255
-    t.integer  "postable_id",               null: false
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-  end
-
-  create_table "thredded_private_topics", force: :cascade do |t|
-    t.integer  "user_id",                              null: false
-    t.integer  "last_user_id",                         null: false
-    t.string   "title",        limit: 255,             null: false
-    t.string   "slug",         limit: 191,             null: false
-    t.integer  "posts_count",              default: 0
-    t.string   "hash_id",      limit: 191,             null: false
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
-  end
-
-  add_index "thredded_private_topics", ["hash_id"], name: "index_thredded_private_topics_on_hash_id"
-  add_index "thredded_private_topics", ["slug"], name: "index_thredded_private_topics_on_slug"
-
-  create_table "thredded_private_users", force: :cascade do |t|
-    t.integer  "private_topic_id", limit: 4
-    t.integer  "user_id",          limit: 4
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-  end
-
-  add_index "thredded_private_users", ["private_topic_id"], name: "index_thredded_private_users_on_private_topic_id"
-  add_index "thredded_private_users", ["user_id"], name: "index_thredded_private_users_on_user_id"
-
-  create_table "thredded_topic_categories", force: :cascade do |t|
-    t.integer "topic_id",    null: false
-    t.integer "category_id", null: false
-  end
-
-  add_index "thredded_topic_categories", ["category_id"], name: "index_thredded_topic_categories_on_category_id"
-  add_index "thredded_topic_categories", ["topic_id"], name: "index_thredded_topic_categories_on_topic_id"
-
-  create_table "thredded_topics", force: :cascade do |t|
-    t.integer  "user_id",                                     null: false
-    t.integer  "last_user_id",                                null: false
-    t.string   "title",           limit: 255,                 null: false
-    t.string   "slug",            limit: 191,                 null: false
-    t.integer  "messageboard_id",                             null: false
-    t.integer  "posts_count",                 default: 0,     null: false
-    t.boolean  "sticky",                      default: false, null: false
-    t.boolean  "locked",                      default: false, null: false
-    t.string   "hash_id",         limit: 191,                 null: false
-    t.string   "type",            limit: 191
-    t.datetime "created_at",                                  null: false
-    t.datetime "updated_at",                                  null: false
-  end
-
-  add_index "thredded_topics", ["hash_id"], name: "index_thredded_topics_on_hash_id"
-  add_index "thredded_topics", ["messageboard_id", "slug"], name: "index_thredded_topics_on_messageboard_id_and_slug", unique: true
-  add_index "thredded_topics", ["messageboard_id"], name: "index_thredded_topics_on_messageboard_id"
-  add_index "thredded_topics", ["user_id"], name: "index_thredded_topics_on_user_id"
-
-  create_table "thredded_user_details", force: :cascade do |t|
-    t.integer  "user_id",                        null: false
-    t.datetime "latest_activity_at"
-    t.integer  "posts_count",        default: 0
-    t.integer  "topics_count",       default: 0
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.datetime "last_seen_at"
-  end
-
-  add_index "thredded_user_details", ["latest_activity_at"], name: "index_thredded_user_details_on_latest_activity_at"
-  add_index "thredded_user_details", ["user_id"], name: "index_thredded_user_details_on_user_id"
-
-  create_table "thredded_user_messageboard_preferences", force: :cascade do |t|
-    t.integer  "user_id",                          null: false
-    t.integer  "messageboard_id",                  null: false
-    t.boolean  "notify_on_mention", default: true, null: false
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
-  end
-
-  add_index "thredded_user_messageboard_preferences", ["user_id", "messageboard_id"], name: "thredded_user_messageboard_preferences_user_id_messageboard_id", unique: true
-
-  create_table "thredded_user_preferences", force: :cascade do |t|
-    t.integer  "user_id",                          null: false
-    t.boolean  "notify_on_mention", default: true, null: false
-    t.boolean  "notify_on_message", default: true, null: false
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
-  end
-
-  add_index "thredded_user_preferences", ["user_id"], name: "index_thredded_user_preferences_on_user_id"
-
-  create_table "thredded_user_private_topic_read_states", force: :cascade do |t|
-    t.integer  "user_id",                 null: false
-    t.integer  "postable_id",             null: false
-    t.integer  "page",        default: 1, null: false
-    t.datetime "read_at",                 null: false
-  end
-
-  add_index "thredded_user_private_topic_read_states", ["user_id", "postable_id"], name: "thredded_user_private_topic_read_states_user_postable", unique: true
-
-  create_table "thredded_user_topic_read_states", force: :cascade do |t|
-    t.integer  "user_id",                 null: false
-    t.integer  "postable_id",             null: false
-    t.integer  "page",        default: 1, null: false
-    t.datetime "read_at",                 null: false
-  end
-
-  add_index "thredded_user_topic_read_states", ["user_id", "postable_id"], name: "thredded_user_topic_read_states_user_postable", unique: true
+  add_index "usernames", ["user_id"], name: "index_usernames_on_user_id"
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                    default: "", null: false
-    t.string   "encrypted_password",       default: "", null: false
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",            default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -270,24 +76,12 @@ ActiveRecord::Schema.define(version: 20160530215420) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
-    t.string   "characters"
-    t.string   "api_keys"
-    t.string   "api_vcodes"
-    t.string   "second_characters"
-    t.string   "third_characters"
-    t.string   "last_api_call"
-    t.string   "last_character_change"
-    t.string   "last_successful_api_call"
-    t.string   "admin"
-    t.string   "users"
-    t.integer  "rank"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  add_index "users", ["users"], name: "users_nocase", unique: true
 
   create_table "view_settings", force: :cascade do |t|
     t.integer  "corporation_information", default: 1
@@ -298,11 +92,11 @@ ActiveRecord::Schema.define(version: 20160530215420) do
     t.integer  "general_information",     default: 1
     t.integer  "new_members",             default: 1
     t.integer  "eve_account_information", default: 1
+    t.integer  "officers",                default: 1
+    t.integer  "directors",               default: 1
     t.integer  "user_id"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.integer  "officers",                default: 1
-    t.integer  "directors",               default: 1
   end
 
   add_index "view_settings", ["user_id"], name: "index_view_settings_on_user_id"

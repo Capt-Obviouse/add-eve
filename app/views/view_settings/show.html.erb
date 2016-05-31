@@ -1,4 +1,9 @@
 <p id="notice"><%= notice %></p>
+
+<p>
+<strong>Directors:</strong>
+<%= @view_setting.directors %>
+</p>
 <p>
   <strong>Officers:</strong>
   <%= @view_setting.officers %>
@@ -49,4 +54,4 @@
 </p>
 
 <%= link_to 'Edit', edit_view_setting_path(@view_setting) %> |
-<%= link_to 'Back', view_settings_path %>
+<%= link_to 'Back', console_path %>

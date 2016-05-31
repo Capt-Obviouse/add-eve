@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Directors</th>
       <th>Officers</th>
       <th>Corporation information</th>
       <th>Programs</th>
@@ -20,8 +21,9 @@
   </thead>
 
   <tbody>
-    <% @view_settings.each do |view_setting| %>
+    <% view_setting = ViewSetting.find_by_user_id(current_user.id) %>
       <tr>
+        <td><%= view_setting.directors %></td>
         <td><%= view_setting.officers %></td>
         <td><%= view_setting.corporation_information %></td>
         <td><%= view_setting.programs %></td>
@@ -36,10 +38,9 @@
         <td><%= link_to 'Edit', edit_view_setting_path(view_setting) %></td>
         <td><%= link_to 'Destroy', view_setting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New View setting', new_view_setting_path %>
+<%= link_to 'Back', console_path %>
