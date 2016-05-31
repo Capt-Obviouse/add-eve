@@ -4,7 +4,7 @@ class ViewSettingsController < ApplicationController
   # GET /view_settings
   # GET /view_settings.json
   def index
-    @view_settings = ViewSetting.all
+    @view_setting = ViewSetting.find_by_id(current_user.id)
   end
 
   # GET /view_settings/1
@@ -42,7 +42,7 @@ class ViewSettingsController < ApplicationController
   def update
     respond_to do |format|
       if @view_setting.update(view_setting_params)
-        format.html { redirect_to @view_setting, notice: 'View setting was successfully updated.' }
+        format.html { redirect_to console_path, notice: 'View setting was successfully updated.' }
         format.json { render :show, status: :ok, location: @view_setting }
       else
         format.html { render :edit }

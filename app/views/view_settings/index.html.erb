@@ -1,46 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing View Settings</h1>
+<h1>Editing View Setting</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Directors</th>
-      <th>Officers</th>
-      <th>Corporation information</th>
-      <th>Programs</th>
-      <th>Operations</th>
-      <th>Communications</th>
-      <th>Finances</th>
-      <th>General information</th>
-      <th>New members</th>
-      <th>Eve account information</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% view_setting = ViewSetting.find_by_user_id(current_user.id) %>
-      <tr>
-        <td><%= view_setting.directors %></td>
-        <td><%= view_setting.officers %></td>
-        <td><%= view_setting.corporation_information %></td>
-        <td><%= view_setting.programs %></td>
-        <td><%= view_setting.operations %></td>
-        <td><%= view_setting.communications %></td>
-        <td><%= view_setting.finances %></td>
-        <td><%= view_setting.general_information %></td>
-        <td><%= view_setting.new_members %></td>
-        <td><%= view_setting.eve_account_information %></td>
-        <td><%= view_setting.user %></td>
-        <td><%= link_to 'Show', view_setting %></td>
-        <td><%= link_to 'Edit', edit_view_setting_path(view_setting) %></td>
-        <td><%= link_to 'Destroy', view_setting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-  </tbody>
-</table>
-
-<br>
-
+<%= render 'form' %>
 <%= link_to 'Back', console_path %>
