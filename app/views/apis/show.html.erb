@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Keyid:</strong>
+  <%= @api.keyid %>
+</p>
+
+<p>
+  <strong>Vcode:</strong>
+  <%= @api.vcode %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @api.user %>
+</p>
+
+<%= link_to 'Edit', edit_api_path(@api) %> |
+<%= link_to 'Back', apis_path %>

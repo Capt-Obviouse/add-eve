@@ -21,8 +21,8 @@
   </div>
   <div class="field">
   <% manager_list = User.all %>
-      <%= f.label :user_id %><br>
-  <%= f.select :user_id, User.all.collect {|f| [ "#{f.characters}", f.id ]} %>
+      <%= f.label "Manager" %><br>
+  <%= f.select :user_id, Username.all.collect {|f| [ "#{f.username}", f.id ]} %>
 
   </div>
   <div class="actions">

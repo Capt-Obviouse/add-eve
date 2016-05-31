@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Character:</strong>
+  <%= @character.character %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @character.user %>
+</p>
+
+<p>
+  <strong>Corporation:</strong>
+  <%= @character.corporation %>
+</p>
+
+<p>
+  <strong>Corporationid:</strong>
+  <%= @character.corporationid %>
+</p>
+
+<%= link_to 'Edit', edit_character_path(@character) %> |
+<%= link_to 'Back', characters_path %>

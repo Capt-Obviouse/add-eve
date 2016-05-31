@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :characters
+  resources :apis
   resources :usernames
   resources :programs
   resources :admins

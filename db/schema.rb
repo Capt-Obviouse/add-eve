@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160530234054) do
+ActiveRecord::Schema.define(version: 20160531065252) do
 
   create_table "admins", force: :cascade do |t|
     t.integer  "forum",      default: 6
@@ -22,6 +22,27 @@ ActiveRecord::Schema.define(version: 20160530234054) do
   end
 
   add_index "admins", ["user_id"], name: "index_admins_on_user_id"
+
+  create_table "apis", force: :cascade do |t|
+    t.integer  "keyid"
+    t.string   "vcode"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "apis", ["user_id"], name: "index_apis_on_user_id"
+
+  create_table "characters", force: :cascade do |t|
+    t.string   "character"
+    t.integer  "user_id"
+    t.string   "corporation"
+    t.integer  "corporationid"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "characters", ["user_id"], name: "index_characters_on_user_id"
 
   create_table "mentors", force: :cascade do |t|
     t.integer  "user_id"
