@@ -4,7 +4,7 @@ class ViewSettingsController < ApplicationController
   # GET /view_settings
   # GET /view_settings.json
   def index
-    @view_setting = ViewSetting.find_by_id(current_user.id)
+    @view_setting = current_user.view_setting
   end
 
   # GET /view_settings/1

@@ -1,33 +1,44 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Characters</h1>
+<h1>Characters</h1>
 
-<table>
+
+
+    <% if !@characters.nil? %>
+      <% if @characters.count > 0 %>
+        <table>
   <thead>
     <tr>
       <th>Character</th>
-      <th>User</th>
       <th>Corporation</th>
-      <th>Corporationid</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @characters.each do |character| %>
-      <tr>
-        <td><%= character.character %></td>
-        <td><%= character.user %></td>
-        <td><%= character.corporation %></td>
-        <td><%= character.corporationid %></td>
-        <td><%= link_to 'Show', character %></td>
-        <td><%= link_to 'Edit', edit_character_path(character) %></td>
-        <td><%= link_to 'Destroy', character, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <% @characters.each do |character| %>
+
+          <tr>
+            <td><%= character.character %></td>
+            <td><%= character.corporation %></td>
+            <td><%= link_to 'Show', character %></td>
+            <td><%= link_to 'Edit', edit_character_path(character) %></td>
+            <td><%= link_to 'Destroy', character, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      <% else %>
+        <% if current_user.api.count > 0 %>
+         Querying Api...
+        <% else %>
+          No key Found<br>
+          <%= link_to 'API Keys', apis_path %>        
+        <% end %>
+      <% end %>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Character', new_character_path %>
+<% @character_array.each do |character| %>
+  <%= character %> <br>
+<% end %>

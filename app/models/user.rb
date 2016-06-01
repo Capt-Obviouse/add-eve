@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   has_one :mentor, :dependent => :destroy
   has_one :username, :dependent => :destroy
   has_many :program
+  has_many :api
+  has_many :character
   after_save :after_create
 
   def to_s
